@@ -1,0 +1,15 @@
+@import url('./Assets/fonts/fonts.scss');
+@import url('./Assets/colors.scss');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
