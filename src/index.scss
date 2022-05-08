@@ -13,3 +13,9 @@ html {
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
 }
+
+html,
+body,
+#root {
+  height: 100%;
+}

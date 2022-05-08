@@ -1,0 +1,76 @@
+.calculator {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  width: 600px;
+  height: 600px;
+  background-color: var(--white);
+  font-size: 1.5rem;
+  border-radius: 40px;
+  box-shadow:
+    2px -2px 1px 1px #888888,
+    4px -4px 1px 1px #999999,
+    6px -6px 1px 1px #AAAAAA,
+    8px -8px 1px 1px #BBBBBB,
+    10px -10px 1px 1px #CCCCCC,
+    12px -12px 1px 1px #DDDDDD,
+    14px -14px 1px 1px #EEEEEE,
+    16px -16px 1px 1px #FDFDFD;
+}
+
+.calculator__section {
+  margin: 50px;
+}
+
+.calculator__text {
+  text-align: center;
+  font-weight: bold;
+}
+
+.calculator__text_orange {
+  color: var(--orange);
+}
+
+.calculator__text_green {
+  color: var(--green);
+}
+
+.calculator__text_red {
+  color: var(--red);
+}
+
+.calculator__text_input-aligned {
+  padding-right: 10px;
+}
+
+.calculator__text_engraved {
+  background-clip: text;
+  background-color: var(--black-shadow);
+  color: transparent;
+  text-shadow: 1px 0px 3px var(--white);
+}
+
+.calculator__header {
+  text-align: center;
+}
+
+.calculator__line {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.calculator__line_input {
+  margin: 30px 0px;
+}
+
+.calculator__input {
+  all: unset;
+  width: 310px;
+  height: 50px;
+  padding: 0 10px;
+  border-radius: 10px;
+  box-shadow: inset 2px 0px 8px rgba(0, 0, 0, 0.5);
+  color: var(--orange);
+  text-align: right;
+}

@@ -1,0 +1,22 @@
+.navigation {
+  display: flex;
+  align-content: stretch;
+  flex-flow: row nowrap;
+  height: var(--navigation-height);
+  user-select: none;
+}
+
+.navigation__wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  flex-shrink: 0;
+}
+
+.navigation__element {
+  cursor: pointer;
+}
+
+.navigation__element_active {
+  color: var(--orange);
+}

@@ -1,0 +1,31 @@
+.content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$arrow-size: 64px;
+
+.content__arrow {
+  border: 3px solid var(--white);
+  border-radius: 32px;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+  width: $arrow-size;
+  height: $arrow-size;
+  margin: 0 100px;
+  transition: 0.3s ease;
+
+  &:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+  }
+
+  span {
+    vertical-align: middle;
+  }
+}
