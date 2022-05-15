@@ -48,4 +48,4 @@ const SliderNavigation = ({
   );
 };
 
-export default SliderNavigation;
+export { SliderNavigation };

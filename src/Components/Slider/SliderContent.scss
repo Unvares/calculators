@@ -8,7 +8,7 @@
 $arrow-size: 64px;
 
 .content__arrow {
-  border: 3px solid var(--white);
+  border: 3px solid var(--additional-color);
   border-radius: 32px;
   cursor: pointer;
   font-size: 2rem;
@@ -21,8 +21,8 @@ $arrow-size: 64px;
   transition: 0.3s ease;
 
   &:hover {
-    border-color: var(--orange);
-    color: var(--orange);
+    border-color: var(--additional-color-2);
+    color: var(--additional-color-2);
   }
 
   span {

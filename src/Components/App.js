@@ -1,27 +1,7 @@
 import React from 'react';
-import Slider from './Slider/';
-
-const calculators = [
-  {
-    name: 'Triangle Surface',
-    inputs: ['height', 'base'],
-    formula: '(H * B) / 2',
-    lastResponse: {
-      value: null,
-      status: null,
-    },
-  },
-  {
-    name: 'Circle Diameter',
-    inputs: ['radius'],
-    formula: '2R',
-    lastResponse: {
-      value: null,
-      status: null,
-    },
-  },
-];
+import { Slider } from './Slider';
+import calculators from '../Assets/calculators.json';
 
 const App = () => <Slider calculators={calculators} />;
 
-export default App;
+export { App };

@@ -50,9 +50,8 @@ const renderResult = ({ value, status }) => {
   const resultClasses = cn({
     calculator__text: true,
     'calculator__text_input-aligned': true,
-    calculator__text_orange: status === 'fulfilled',
-    calculator__text_green: status === 'processing',
-    calculator__text_red: status === 'error',
+    calculator__text_processing: status === 'processing',
+    calculator__text_error: status === 'error',
   });
 
   return (
@@ -80,4 +79,4 @@ const BottomSection = ({ formula, lastResponse }) => (
 Calculator.TopSection = TopSection;
 Calculator.BottomSection = BottomSection;
 
-export default Calculator;
+export { Calculator };

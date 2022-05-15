@@ -1,5 +1,5 @@
 import React from 'react';
-import Calculator from '../Calculator';
+import { Calculator } from '../Calculator';
 import './SliderContent.scss';
 
 const SliderContent = ({
@@ -34,4 +34,4 @@ const SliderContent = ({
   );
 };
 
-export default SliderContent;
+export { SliderContent };

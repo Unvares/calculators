@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import SliderNavigation from './SliderNavigation';
-import SliderContent from './SliderContent';
+import { SliderNavigation } from './SliderNavigation';
+import { SliderContent } from './SliderContent';
 import './Slider.scss';
 
 const Slider = ({ calculators }) => {
@@ -24,4 +24,4 @@ const Slider = ({ calculators }) => {
   );
 };
 
-export default Slider;
+export { Slider };
