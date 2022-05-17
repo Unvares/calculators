@@ -5,6 +5,8 @@ import { SliderContent } from './SliderContent';
 import './Slider.scss';
 
 const Slider = ({ calculators }) => {
+  if (calculators.length === 0) return null;
+
   const [activeId, setActive] = useState(0);
 
   const calculator = calculators[activeId];
