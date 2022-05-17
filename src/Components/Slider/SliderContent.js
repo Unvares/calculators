@@ -3,7 +3,7 @@ import { Calculator } from '../Calculator';
 import './SliderContent.scss';
 
 const SliderContent = ({
-  calculator: { name, inputs, formula, lastResponse },
+  calculator: { title, inputs, formula, lastResponse },
   activeState: { activeId, setActive },
   sliderLength,
 }) => {
@@ -21,8 +21,14 @@ const SliderContent = ({
         <span>&lt;</span>
       </div>
       <Calculator>
-        <Calculator.TopSection header={name} inputs={inputs} />
-        <Calculator.BottomSection formula={formula} lastResponse={lastResponse} />
+        <Calculator.TopSection
+          title={title}
+          inputs={inputs}
+        />
+        <Calculator.BottomSection
+          formula={formula}
+          lastResponse={lastResponse}
+        />
       </Calculator>
       <div
         className='content__arrow content__arrow_next'

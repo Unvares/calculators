@@ -13,36 +13,32 @@ const Calculator = ({ children }) => (
   </motion.div>
 );
 
-const renderForm = (inputs) => (
-  <form>
-    {inputs.map((input) => {
-      return (
-        <div className='calculator__line calculator__line_input' key={input}>
-          <label
-            className='calculator__text calculator__text_engraved'
-            htmlFor={input}
-          >
-            {input.toUpperCase()}
-          </label>
-          <input
-            className='calculator__input calculator__text'
-            type='text'
-            name={input}
-            id={input}
-            autoComplete='off'
-          />
-        </div>
-      );
-    })}
-  </form>
-);
-
-const TopSection = ({ header, inputs }) => (
+const TopSection = ({ title, inputs }) => (
   <section className='calculator__section'>
     <h2 className='calculator__text calculator__text_engraved'>
-      {header.toUpperCase()}
+      {title.toUpperCase()}
     </h2>
-    {renderForm(inputs)}
+    <form>
+      {inputs.map((input) => {
+        return (
+          <div className='calculator__line calculator__line_input' key={input}>
+            <label
+              className='calculator__text calculator__text_engraved'
+              htmlFor={input}
+            >
+              {input.toUpperCase()}
+            </label>
+            <input
+              className='calculator__input calculator__text'
+              type='text'
+              name={input}
+              id={input}
+              autoComplete='off'
+            />
+          </div>
+        );
+      })}
+    </form>
   </section>
 );
 
@@ -57,7 +53,7 @@ const renderResult = ({ value, status }) => {
   return (
     <div className='calculator__line'>
       <span className='calculator__text calculator__text_engraved'>RESULT</span>
-      <span className={resultClasses}>{value && value.toUpperCase()}</span>
+      <span className={resultClasses}>{value.toUpperCase()}</span>
     </div>
   );
 };

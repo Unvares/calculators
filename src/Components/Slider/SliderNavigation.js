@@ -19,15 +19,15 @@ const SliderNavigation = ({
   const updateActive = (index) => () => setActive(index);
 
   const names = calculators.map((calculator, index) => {
-    const { name } = calculator;
+    const { title } = calculator;
     const elementClasses = cn({
       navigation__element: true,
       navigation__element_active: index === activeId,
     });
     return (
-      <div className='navigation__wrapper' key={name}>
+      <div className='navigation__wrapper' key={title}>
         <p className={elementClasses} onClick={updateActive(index)}>
-          {name}
+          {title}
         </p>
       </div>
     );
