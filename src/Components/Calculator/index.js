@@ -53,7 +53,7 @@ const renderResult = ({ value, status }) => {
   return (
     <div className='calculator__line'>
       <span className='calculator__text calculator__text_engraved'>RESULT</span>
-      <span className={resultClasses}>{value.toUpperCase()}</span>
+      <span className={resultClasses}>{value && value.toUpperCase()}</span>
     </div>
   );
 };

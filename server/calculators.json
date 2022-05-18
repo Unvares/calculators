@@ -1,0 +1,14 @@
+{
+  "calculators": [
+    {
+      "title": "Triangle Surface",
+      "inputs": ["height", "base"],
+      "formula": "(H * B) / 2"
+    },
+    {
+      "title": "Circle Diameter",
+      "inputs": ["radius"],
+      "formula": "2R"
+    }
+  ]
+}

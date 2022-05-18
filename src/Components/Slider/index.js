@@ -5,10 +5,17 @@ import { SliderContent } from './SliderContent';
 import './Slider.scss';
 
 const Slider = ({ calculators }) => {
-  if (calculators.length === 0) return null;
+  const { length } = calculators;
 
+  if (length === 0) return null;
+  
+  const initialResponses = Array(length).fill({
+    value: null,
+    status: null,
+  });
   const [activeId, setActive] = useState(0);
-
+  const [lastResponses, setLastResponse] = useState(initialResponses);
+  
   const calculator = calculators[activeId];
 
   return (
@@ -18,8 +25,11 @@ const Slider = ({ calculators }) => {
         activeState={{ activeId, setActive }}
       />
       <SliderContent
-        sliderLength={calculators.length}
-        calculator={calculator}
+        sliderLength={length}
+        calculator={{
+          ...calculator,
+          lastResponse: lastResponses[activeId],
+        }}
         activeState={{ activeId, setActive }}
       />
     </div>
