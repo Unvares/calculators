@@ -25,7 +25,7 @@ const SliderNavigation = ({
       navigation__element_active: index === activeId,
     });
     return (
-      <div className='navigation__wrapper' key={title}>
+      <div className='navigation__element-wrapper' key={title}>
         <p className={elementClasses} onClick={updateActive(index)}>
           {title}
         </p>
@@ -35,15 +35,21 @@ const SliderNavigation = ({
 
   return (
     <motion.div
-      ref={ref}
-      drag='x'
-      dragConstraints={{
-        left: width,
-        right: 0,
-      }}
-      className='navigation'
+      initial={{ transform: 'translate(-100px)' }}
+      animate={{ transform: 'translate(0px)' }}
+      className='navigation-wrapper'
     >
-      {names}
+      <motion.div
+        ref={ref}
+        drag='x'
+        dragConstraints={{
+          left: width,
+          right: 0,
+        }}
+        className='navigation'
+      >
+        {names}
+      </motion.div>
     </motion.div>
   );
 };

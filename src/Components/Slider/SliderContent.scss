@@ -25,6 +25,11 @@ $arrow-size: 64px;
     color: var(--additional-color-2);
   }
 
+  &:active {
+    transform: scale(0.9);
+    transition: 120ms;
+  }
+
   span {
     vertical-align: middle;
   }

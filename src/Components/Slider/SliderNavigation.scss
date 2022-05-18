@@ -1,3 +1,13 @@
+.navigation-wrapper::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: var(--navigation-height);
+  width: 100%;
+  height: 1px;
+  background-color: var(--additional-color);
+}
+
 .navigation {
   display: flex;
   align-content: stretch;
@@ -6,7 +16,7 @@
   user-select: none;
 }
 
-.navigation__wrapper {
+.navigation__element-wrapper {
   display: flex;
   align-items: center;
   padding: 0 20px;

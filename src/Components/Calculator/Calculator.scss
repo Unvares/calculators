@@ -7,6 +7,7 @@
   background-color: var(--additional-color);
   font-size: 1.5rem;
   border-radius: 40px;
+  z-index: 1;
   box-shadow:
     2px -2px 1px 1px #888888,
     4px -4px 1px 1px #999999,
@@ -51,6 +52,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 .calculator__line_input {
