@@ -4,7 +4,7 @@ import { Calculator } from '../Calculator';
 import './SliderContent.scss';
 
 const SliderContent = ({
-  calculator: { title, inputs, formula, lastResponse },
+  calculator: { title, inputs, formula, lastResponse, setLastResponses },
   activeState: { activeId, setActive },
   sliderLength,
 }) => {
@@ -30,6 +30,8 @@ const SliderContent = ({
           <Calculator.TopSection
             title={title}
             inputs={inputs}
+            activeId={activeId}
+            setLastResponses={setLastResponses}
           />
           <Calculator.BottomSection
             formula={formula}

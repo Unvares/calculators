@@ -8,15 +8,20 @@ const Slider = ({ calculators }) => {
   const { length } = calculators;
 
   if (length === 0) return null;
-  
+
   const initialResponses = Array(length).fill({
     value: null,
     status: null,
   });
   const [activeId, setActive] = useState(0);
-  const [lastResponses, setLastResponse] = useState(initialResponses);
-  
-  const calculator = calculators[activeId];
+  const [lastResponses, setLastResponses] = useState(initialResponses);
+
+  const lastResponse = lastResponses[activeId];
+  const calculator = {
+    ...calculators[activeId],
+    lastResponse,
+    setLastResponses,
+  };
 
   return (
     <div className='slider'>
@@ -26,10 +31,7 @@ const Slider = ({ calculators }) => {
       />
       <SliderContent
         sliderLength={length}
-        calculator={{
-          ...calculator,
-          lastResponse: lastResponses[activeId],
-        }}
+        calculator={calculator}
         activeState={{ activeId, setActive }}
       />
     </div>

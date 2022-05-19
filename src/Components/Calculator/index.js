@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import cn from 'classnames';
+import { Server } from '../App';
 import './Calculator.scss';
 
 const Calculator = ({ children }) => (
@@ -13,12 +14,67 @@ const Calculator = ({ children }) => (
   </motion.div>
 );
 
-const TopSection = ({ title, inputs }) => (
+const normalizeInput = (input) =>
+  input.map((value) => (value === '' ? null : Number(value)));
+
+const getValues = (form) => {
+  const data = new FormData(form);
+  return normalizeInput([...data.values()]);
+};
+
+const updateLastResponses = ({ status, value, setLastResponses, activeId }) => {
+  let stateObject;
+
+  if (status === 'fulfilled') stateObject = { status, value };
+  if (status === 'processing') stateObject = { status, value: 'processing...' };
+  if (status === 'error') stateObject = { status, value: 'error' };
+
+  setLastResponses((state) => {
+    const newState = [...state];
+    newState[activeId] = stateObject;
+    return newState;
+  });
+};
+
+const handleSubmit =
+  ({ activeId, setLastResponses }) =>
+  (event) => {
+    event.preventDefault();
+
+    updateLastResponses({
+      setLastResponses,
+      activeId,
+      status: 'processing',
+    });
+
+    const values = getValues(event.target);
+    const request = {
+      method: 'POST',
+      path: '',
+      body: { values, id: activeId },
+    };
+
+    Server.fetch(JSON.stringify(request))
+      .then((response) =>
+        updateLastResponses({
+          setLastResponses,
+          activeId,
+          status: 'fulfilled',
+          value: response,
+        })
+      )
+      .catch((message) => {
+        updateLastResponses({ setLastResponses, activeId, status: 'error' });
+        throw new Error(message);
+      });
+  };
+
+const TopSection = ({ title, inputs, activeId, setLastResponses }) => (
   <section className='calculator__section'>
     <h2 className='calculator__text calculator__text_engraved'>
       {title.toUpperCase()}
     </h2>
-    <form>
+    <form onSubmit={handleSubmit({ activeId, setLastResponses })}>
       {inputs.map((input) => {
         return (
           <div className='calculator__line calculator__line_input' key={input}>
@@ -38,6 +94,7 @@ const TopSection = ({ title, inputs }) => (
           </div>
         );
       })}
+      <button type='submit' style={{ display: 'none' }}></button>
     </form>
   </section>
 );
