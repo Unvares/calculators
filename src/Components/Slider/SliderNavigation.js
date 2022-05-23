@@ -1,13 +1,9 @@
-import React from 'react';
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import cn from 'classnames';
 import './SliderNavigation.scss';
 
-const SliderNavigation = ({
-  calculators,
-  activeState: { activeId, setActive },
-}) => {
+const SliderNavigation = ({ titles, activeId, onClick }) => {
   const [width, setWidth] = useState(0);
   const ref = useRef();
 
@@ -16,17 +12,13 @@ const SliderNavigation = ({
     setWidth(offsetWidth - scrollWidth);
   }, []);
 
-  const updateActive = (index) => () => setActive(index);
-
-  const names = calculators.map((calculator, index) => {
-    const { title } = calculator;
-    const elementClasses = cn({
-      navigation__element: true,
+  const content = titles.map((title, index) => {
+    const elementClasses = cn('navigation__element', {
       navigation__element_active: index === activeId,
     });
     return (
       <div className='navigation__element-wrapper' key={title}>
-        <p className={elementClasses} onClick={updateActive(index)}>
+        <p className={elementClasses} onClick={() => onClick(index)}>
           {title}
         </p>
       </div>
@@ -48,7 +40,7 @@ const SliderNavigation = ({
         }}
         className='navigation'
       >
-        {names}
+        {content}
       </motion.div>
     </motion.div>
   );

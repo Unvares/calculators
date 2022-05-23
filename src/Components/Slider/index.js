@@ -1,38 +1,27 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { SliderNavigation } from './SliderNavigation';
 import { SliderContent } from './SliderContent';
 import './Slider.scss';
 
-const Slider = ({ calculators }) => {
+const Slider = ({ calculators = [] }) => {
   const { length } = calculators;
-
   if (length === 0) return null;
 
-  const initialResponses = Array(length).fill({
-    value: null,
-    status: null,
-  });
   const [activeId, setActive] = useState(0);
-  const [lastResponses, setLastResponses] = useState(initialResponses);
-
-  const lastResponse = lastResponses[activeId];
-  const calculator = {
-    ...calculators[activeId],
-    lastResponse,
-    setLastResponses,
-  };
+  const titles = calculators.map(({ title }) => title);
 
   return (
     <div className='slider'>
       <SliderNavigation
-        calculators={calculators}
-        activeState={{ activeId, setActive }}
+        activeId={activeId}
+        onClick={setActive}
+        titles={titles}
       />
       <SliderContent
-        sliderLength={length}
-        calculator={calculator}
-        activeState={{ activeId, setActive }}
+        activeId={activeId}
+        calculator={calculators[activeId]}
+        onClick={setActive}
+        length={length}
       />
     </div>
   );

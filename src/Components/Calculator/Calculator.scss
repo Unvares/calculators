@@ -1,12 +1,12 @@
 .calculator {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
   width: 600px;
   height: 600px;
   background-color: var(--additional-color);
   font-size: 1.5rem;
   border-radius: 40px;
+  padding: 50px;
   z-index: 1;
   box-shadow:
     2px -2px 1px 1px #888888,
@@ -17,10 +17,6 @@
     12px -12px 1px 1px #DDDDDD,
     14px -14px 1px 1px #EEEEEE,
     16px -16px 1px 1px #FDFDFD;
-}
-
-.calculator__section {
-  margin: 50px;
 }
 
 .calculator__text {
@@ -46,6 +42,10 @@
   background-color: var(--engraved-text-background);
   color: transparent;
   text-shadow: 1px 0px 3px var(--additional-color);
+}
+
+.calculator__info {
+  margin-top: auto;
 }
 
 .calculator__line {

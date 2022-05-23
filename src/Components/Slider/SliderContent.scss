@@ -17,7 +17,6 @@ $arrow-size: 64px;
   user-select: none;
   width: $arrow-size;
   height: $arrow-size;
-  margin: 0 100px;
   transition: 0.3s ease;
 
   &:hover {
@@ -33,4 +32,12 @@ $arrow-size: 64px;
   span {
     vertical-align: middle;
   }
+}
+
+.content__arrow_prev {
+  margin-right: 50px;
+}
+
+.content__arrow_next {
+  margin-left: 50px;
 }
