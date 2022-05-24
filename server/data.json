@@ -6,6 +6,16 @@
       "formula": "(H * B) / 2"
     },
     {
+      "title": "Square Surface",
+      "inputs": ["side"],
+      "formula": "A * A"
+    },
+    {
+      "title": "Rectangle Surface",
+      "inputs": ["side 1", "side 2"],
+      "formula": "A * B"
+    },
+    {
       "title": "Circle Diameter",
       "inputs": ["radius"],
       "formula": "2R"

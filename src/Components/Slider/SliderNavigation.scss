@@ -25,8 +25,14 @@
 
 .navigation__element {
   cursor: pointer;
+  color: transparent;
+  background: linear-gradient(to bottom, white 50%, var(--additional-color-2) 50%);
+  background-size: 100% 200%;
+  background-clip: text;
+  transition: background-position 250ms ease;
 }
 
 .navigation__element_active {
-  color: var(--additional-color-2);
+  background-position: 100% 100%;
+  transition: background-position 250ms ease 100ms;
 }

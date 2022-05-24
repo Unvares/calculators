@@ -22,7 +22,7 @@ const CalculatorInfo = ({ formula, lastResponse = {} }) => {
           FORMULA
         </span>
         <span className='calculator__text calculator__text_engraved calculator__text_input-aligned'>
-          {formula}
+          {formula.toUpperCase()}
         </span>
       </div>
       <div className='calculator__line'>
