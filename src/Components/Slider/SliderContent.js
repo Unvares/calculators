@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calculator } from '../Calculator';
 import './SliderContent.scss';
 
 const SliderContent = ({ activeId, onClick, calculator, length }) => {
-  const [lastResponses, setLastResponses] = useState([]);
   const prevActive = (activeId + length - 1) % length;
   const nextActive = (activeId + 1) % length;
 
@@ -21,12 +20,7 @@ const SliderContent = ({ activeId, onClick, calculator, length }) => {
         >
           <span>&lt;</span>
         </div>
-        <Calculator
-          calculator={calculator}
-          activeId={activeId}
-          lastResponse={lastResponses[activeId]}
-          setLastResponses={setLastResponses}
-        />
+        <Calculator calculator={calculator} activeId={activeId} />
         <div
           className='content__arrow content__arrow_next'
           onClick={() => onClick(nextActive)}

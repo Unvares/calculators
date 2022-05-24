@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CalculatorTitle } from './CalculatorTitle';
 import { CalculatorForm } from './CalculatorForm';
 import { CalculatorInfo } from './CalculatorInfo';
 import './Calculator.scss';
 
-const Calculator = ({
-  activeId,
-  calculator,
-  lastResponse,
-  setLastResponses,
-}) => {
+const Calculator = ({ activeId, calculator }) => {
+  const [lastResponses, setLastResponses] = useState([]);
   const { title, inputs, formula } = calculator;
 
   return (
@@ -25,7 +21,10 @@ const Calculator = ({
         activeId={activeId}
         setLastResponses={setLastResponses}
       />
-      <CalculatorInfo formula={formula} lastResponse={lastResponse} />
+      <CalculatorInfo
+        formula={formula}
+        lastResponse={lastResponses[activeId]}
+      />
     </motion.div>
   );
 };

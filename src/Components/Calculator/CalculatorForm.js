@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Server } from '../App';
 
 const CalculatorForm = ({ inputs, activeId, setLastResponses }) => {
@@ -8,19 +8,16 @@ const CalculatorForm = ({ inputs, activeId, setLastResponses }) => {
       newState[activeId] = newLastResponse;
       return newState;
     });
+
   const normalizeInput = (input) =>
     input.map((value) => (value === '' ? null : Number(value)));
-  const getValues = (form) => {
-    const data = new FormData(form);
-    return normalizeInput([...data.values()]);
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     setLastResponse({ status: 'processing', value: 'processing...' });
 
-    const values = getValues(event.target);
+    const values = normalizeInput(inputValues);
     const request = {
       method: 'POST',
       path: '',
@@ -40,9 +37,12 @@ const CalculatorForm = ({ inputs, activeId, setLastResponses }) => {
       });
   };
 
+  const [values, setValues] = useState([]);
+  const inputValues = values[activeId] || Array(inputs.length).fill('');
+
   return (
     <form onSubmit={handleSubmit}>
-      {inputs.map((input) => (
+      {inputs.map((input, index) => (
         <div className='calculator__line calculator__line_input' key={input}>
           <label
             className='calculator__text calculator__text_engraved'
@@ -55,6 +55,15 @@ const CalculatorForm = ({ inputs, activeId, setLastResponses }) => {
             type='text'
             name={input}
             id={input}
+            value={inputValues[index] || ''}
+            onChange={({ target: { value } }) =>
+              setValues((values) => {
+                inputValues[index] = value;
+                const newValues = [...values];
+                newValues[activeId] = inputValues;
+                return newValues;
+              })
+            }
             autoComplete='off'
           />
         </div>
