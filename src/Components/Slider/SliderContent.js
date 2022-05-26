@@ -12,20 +12,24 @@ const SliderContent = ({ activeId, onClick, calculator, length }) => {
       <motion.div
         initial={{ scale: 0.75 }}
         animate={{ scale: 1 }}
+        drag
+        dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
         className='content'
       >
         <div
           className='content__arrow content__arrow_prev'
           onClick={() => onClick(prevActive)}
         >
-          <span>&lt;</span>
+          <div className='content__arow_top' />
+          <div className='content__arow_bottom' />
         </div>
         <Calculator calculator={calculator} activeId={activeId} />
         <div
           className='content__arrow content__arrow_next'
           onClick={() => onClick(nextActive)}
         >
-          <span>&gt;</span>
+          <div className='content__arow_top' />
+          <div className='content__arow_bottom' />
         </div>
       </motion.div>
     </AnimatePresence>

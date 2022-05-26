@@ -65,7 +65,7 @@
   height: 50px;
   padding: 0 10px;
   border-radius: 10px;
-  box-shadow: inset 2px 0px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 2px 0px 8px var(--background-substrate);
   color: var(--additional-color-2);
   text-align: right;
 }
