@@ -1,0 +1,8 @@
+.slider {
+  --navigation-height: 80px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  overflow: hidden;
+}

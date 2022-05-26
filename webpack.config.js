@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: path.join(__dirname, 'src', 'index.js'),
   output: {
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   mode: 'none',
   module: {
@@ -22,17 +22,15 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.(woff||woff2)$/,
-        type:'asset/resource',
+        exclude: /node_modules/,
+        type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name].[ext]'
+          filename: 'fonts/[name].[ext]',
         },
       },
     ],

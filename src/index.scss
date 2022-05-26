@@ -8,8 +8,29 @@
 }
 
 html {
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--main-color);
+  color: var(--additional-color);
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  background: url('./Assets/images/background.jpg');
+
+  &::before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--background-substrate);
+    z-index: 0;
+  }
 }
