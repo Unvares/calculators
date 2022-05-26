@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve",
-    "build": "webpack"
+    "build": "webpack",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/Unvares/calculators/issues"
   },
-  "homepage": "https://github.com/Unvares/calculators#readme",
+  "homepage": "https://unvares.github.io",
   "dependencies": {
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -33,6 +34,7 @@
     "classnames": "^2.3.1",
     "css-loader": "^6.7.1",
     "framer-motion": "^6.3.3",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "postcss-loader": "^6.2.1",
     "sass": "^1.51.0",
