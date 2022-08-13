@@ -39,7 +39,7 @@
 
 .calculator__text_engraved {
   background-clip: text;
-  background-color: var(--engraved-text-background);
+  background-color: var(--calculator-inner-shadow);
   color: transparent;
   text-shadow: 1px 0px 3px var(--additional-color);
 }
@@ -65,7 +65,7 @@
   height: 50px;
   padding: 0 10px;
   border-radius: 10px;
-  box-shadow: inset 2px 0px 8px var(--background-substrate);
+  box-shadow: inset 2px 0px 8px var(--calculator-inner-shadow);
   color: var(--additional-color-2);
   text-align: right;
 }
