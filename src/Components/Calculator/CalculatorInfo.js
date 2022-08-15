@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-const CalculatorInfo = ({ formula, lastResponse = {} }) => {
+const CalculatorInfo = ({ formula = '', lastResponse = {} }) => {
   const renderResult = ({ value, status }) => {
     const resultClasses = cn(
       'calculator__text calculator__text_input-aligned',
