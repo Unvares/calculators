@@ -31,9 +31,8 @@ const CalculatorForm = ({ inputs, activeId, setLastResponses }) => {
           status: 'fulfilled',
         })
       )
-      .catch((message) => {
+      .catch(() => {
         setLastResponse({ status: 'error', value: 'error' });
-        throw new Error(message);
       });
   };
 
