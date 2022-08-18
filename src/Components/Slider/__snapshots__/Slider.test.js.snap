@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SliderContent renders calculator and control arrows 1`] = `
+<div
+  class="content"
+  draggable="false"
+  style="transform: scale(0.75) translateZ(0); user-select: none;"
+>
+  <div
+    class="content__arrow content__arrow_prev"
+  >
+    <div
+      class="content__arow_top"
+    />
+    <div
+      class="content__arow_bottom"
+    />
+  </div>
+  <div
+    class="calculator"
+  >
+    <h2
+      class="calculator__text calculator__text_engraved"
+    >
+      TRIANGLE SURFACE
+    </h2>
+    <form>
+      <div
+        class="calculator__line calculator__line_input"
+      >
+        <label
+          class="calculator__text calculator__text_engraved"
+          for="height"
+        >
+          HEIGHT
+        </label>
+        <input
+          autocomplete="off"
+          class="calculator__input calculator__text"
+          id="height"
+          name="height"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="calculator__line calculator__line_input"
+      >
+        <label
+          class="calculator__text calculator__text_engraved"
+          for="base"
+        >
+          BASE
+        </label>
+        <input
+          autocomplete="off"
+          class="calculator__input calculator__text"
+          id="base"
+          name="base"
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        style="display: none;"
+        type="submit"
+      />
+    </form>
+    <section
+      class="calculator__info"
+    >
+      <div
+        class="calculator__line"
+      >
+        <span
+          class="calculator__text calculator__text_engraved"
+        >
+          FORMULA
+        </span>
+        <span
+          class="calculator__text calculator__text_engraved calculator__text_input-aligned"
+        >
+          (H * B) / 2
+        </span>
+      </div>
+      <div
+        class="calculator__line"
+      >
+        <span
+          class="calculator__text calculator__text_engraved"
+        >
+          RESULT
+        </span>
+        <span
+          class="calculator__text calculator__text_input-aligned"
+        />
+      </div>
+    </section>
+  </div>
+  <div
+    class="content__arrow content__arrow_next"
+  >
+    <div
+      class="content__arow_top"
+    />
+    <div
+      class="content__arow_bottom"
+    />
+  </div>
+</div>
+`;
+
+exports[`SliderNavigation renders titles properly 1`] = `
+<div
+  class="navigation-wrapper"
+  data-projection-id="1"
+  style="transform: translate(-100px);"
+>
+  <div
+    class="navigation"
+    data-projection-id="2"
+    draggable="false"
+    style="user-select: none;"
+  >
+    <div
+      class="navigation__element-wrapper"
+    >
+      <p
+        class="navigation__element"
+      >
+        Triangle Surface
+      </p>
+    </div>
+    <div
+      class="navigation__element-wrapper"
+    >
+      <p
+        class="navigation__element"
+      >
+        Square Surface
+      </p>
+    </div>
+    <div
+      class="navigation__element-wrapper"
+    >
+      <p
+        class="navigation__element"
+      >
+        Rectangle Surface
+      </p>
+    </div>
+  </div>
+</div>
+`;

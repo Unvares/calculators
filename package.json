@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve",
     "build": "webpack",
     "deploy": "gh-pages -d dist",
+    "dev": "webpack serve",
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
+    "test-coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage",
     "update-snapshots": "NODE_OPTIONS='--experimental-vm-modules' jest --updateSnapshot"
   },
   "repository": {
